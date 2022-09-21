@@ -16,6 +16,8 @@
 // Category: Technologies
 // Elements: 5
 
+"use strict";
+
 const items = document.querySelectorAll('.item');
 
 const itemsQty = items.length;

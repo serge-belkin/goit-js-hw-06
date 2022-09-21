@@ -5,6 +5,8 @@
 // Додасть елементу клас item.
 // Після чого, вставить усі <li> за одну операцію у список ul#ingredients.
 
+"use strict";
+
 const ingredients = [
   'Potatoes',
   'Mushrooms',
