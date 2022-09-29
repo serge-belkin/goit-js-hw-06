@@ -19,10 +19,14 @@ const ingredients = [
 
 const ingredientsList = document.querySelector('#ingredients');
 
-ingredients.map(ingredient => {
+const ingredientsArray = [];
+
+ingredients.forEach(ingredient => {
   const item = document.createElement('li');
   item.textContent = ingredient;
-  item.classList.add('item');
+  item.className = 'item';
 
-  ingredientsList.append(item);
+  ingredientsArray.push(item);
 });
+
+ingredientsList.append(...ingredientsArray);

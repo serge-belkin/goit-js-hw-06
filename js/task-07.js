@@ -8,6 +8,11 @@ const fontSizeSlider = document.querySelector('input#font-size-control');
 
 const msgText = document.querySelector('span#text');
 
-fontSizeSlider.addEventListener('change', element => {
-  msgText.style.fontSize = `${element.target.value}px`
-});
+function handleInputRange(evt) {
+  msgText.style.fontSize = evt.currentTarget.value + 'px';
+}
+
+fontSizeSlider.addEventListener('input', handleInputRange);
+
+
+

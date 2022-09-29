@@ -6,20 +6,21 @@
 
 "use strict";
 
-const counterValue = document.querySelector('.value');
+let counterValue = 0;
 
-const subValue = document.querySelector('.sub-value');
+const displayValue = document.querySelector('#value');
 
-const addValue = document.querySelector('.add-value');
+const subValue = document.querySelector('button[data-action="decrement"]');
 
-subValue.addEventListener('click', decrement);
-addValue.addEventListener('click', increment);
+const addValue = document.querySelector('button[data-action="increment"]');
 
-function decrement() {
-  counterValue.textContent = Number(counterValue.textContent) - 1;
-}
+subValue.addEventListener('click', () => {
+  counterValue--
+  displayValue.textContent = counterValue
+});
 
-function increment() { 
-  counterValue.textContent = Number(counterValue.textContent) + 1;
-}
+addValue.addEventListener('click', () => {
+  counterValue++
+  displayValue.textContent = counterValue
+});
 

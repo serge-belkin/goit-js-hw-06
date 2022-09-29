@@ -2,7 +2,8 @@
 
 // <ul class="gallery"></ul>
 
-// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>. Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
+// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>.
+//  Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
 
 // Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
 // Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
@@ -24,5 +25,11 @@ const images = [
   },
 ];
 
-for (let element of images)
-document.querySelector('.gallery').insertAdjacentHTML('beforeend', `<li><img src="${element.url}" alt="${element.alt}"></li>`);
+const imgList = document.querySelector('.gallery');
+
+const imgMarkup = images
+  .map(image => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .join('');
+
+imgList.insertAdjacentHTML('beforeend', imgMarkup);
+
